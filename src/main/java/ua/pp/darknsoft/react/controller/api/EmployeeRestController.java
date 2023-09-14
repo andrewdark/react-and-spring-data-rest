@@ -11,15 +11,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class MainRestController {
+public class EmployeeRestController {
 
     private final EmployeeService employeeService;
 
-    public MainRestController(EmployeeService employeeService) {
+    public EmployeeRestController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
 
-    @GetMapping("/employee")
+    @GetMapping("/employees")
     public ResponseEntity<List<Employee>> getAll(){
         return ResponseEntity.ok(employeeService.getAll());
     }
